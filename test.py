@@ -3,10 +3,12 @@ while True:
         username = input("Enter an email: ")
         if len(username) > 25:
             print("tidak boleh lebih 25")
-        elif not username.replace("@", "").replace(".", "").isalnum():
-            print(f"Welcome {username}")
+        elif username.replace(".", "").isalnum():
+            print("mus have @")
+        elif username.replace("@", "").isalnum():
+            print("must have .")
         else:
-            print("Invalid email format.")  # Catch any other invalid formats
+            print(f"Welcome {username}")
             break
     except Exception as e:
         print(f"An error occurred: {e}, please try again.")
