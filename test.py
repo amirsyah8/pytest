@@ -1,16 +1,7 @@
 while True:
     try:
-        username = input("Enter an email: ")
-        if len(username) > 12:
-            print("tidak boleh lebih 12")
-        elif " " in username:
-            print("Tak boleh ada space")
-        elif "@" not in username:
-            print("Must contain @")
-        else:
-            print(f"Welcome {username}")
-            break
-    except:
-        print("An error occurred, please try again.")
-
-
+        number = int(input("Enter an integer: "))
+        print(f"You entered: {number}")
+        break  # Exit the loop if the input is valid
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
