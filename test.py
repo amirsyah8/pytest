@@ -1,3 +1,4 @@
+
 while True:
     try:
         username = input("Enter an email: ")
@@ -14,3 +15,13 @@ while True:
         print(f"An error occurred: {e}, please try again.")
 
 print(f"Anda telah berjaya mencipta email {username}.")
+"""
+
+username = "ami@eamie.com"
+
+print(username.replace("@", "").isalnum())
+print(username.replace(".", "").isalnum())
+print(username.replace(".", "").replace("@", "").isalnum())
+print(username.isalnum())
+print(username.replace(".", ""))
+"""
