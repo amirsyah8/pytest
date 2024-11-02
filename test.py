@@ -1,16 +1,14 @@
 while True:
     try:
         username = input("Enter an email: ")
-        if len(username) > 12:
-            print("tidak boleh lebih 12")
-        elif " " in username:
-            print("Tak boleh ada space")
-        elif "@" not in username:
-            print("Must contain @")
-        else:
+        if len(username) > 25:
+            print("tidak boleh lebih 25")
+        elif not username.replace("@", "").replace(".", "").isalnum():
             print(f"Welcome {username}")
+        else:
+            print("Invalid email format.")  # Catch any other invalid formats
             break
-    except:
-        print("An error occurred, please try again.")
+    except Exception as e:
+        print(f"An error occurred: {e}, please try again.")
 
-
+print(f"Anda telah berjaya mencipta email {username}.")
