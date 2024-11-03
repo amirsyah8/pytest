@@ -1,27 +1,9 @@
+import re
 
-while True:
-    try:
-        username = input("Enter an email: ")
-        if len(username) > 25:
-            print("tidak boleh lebih 25")
-        elif username.replace(".", "").isalnum():
-            print("mus have @")
-        elif username.replace("@", "").isalnum():
-            print("must have .")
-        else:
-            print(f"Welcome {username}")
-            break
-    except Exception as e:
-        print(f"An error occurred: {e}, please try again.")
+def extract_digits(string):
+    pattern = r'\d+'  # Matches one or more digits
+    return re.findall(pattern, string)
 
-print(f"Anda telah berjaya mencipta email {username}.")
-"""
-
-username = "ami@eamie.com"
-
-print(username.replace("@", "").isalnum())
-print(username.replace(".", "").isalnum())
-print(username.replace(".", "").replace("@", "").isalnum())
-print(username.isalnum())
-print(username.replace(".", ""))
-"""
+# Test examples
+print(extract_digits("+0 19 6871 871"))  # ['3', '5', '12']
+print(extract_digits("Phone number: 123-456-7890"))               # ['123', '456', '7890']
