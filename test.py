@@ -1,14 +1,16 @@
-while True:
-    try:
-        username = input("Enter an email: ")
-        if len(username) > 25:
-            print("tidak boleh lebih 25")
-        elif not username.replace("@", "").replace(".", "").isalnum():
-            print(f"Welcome {username}")
-        else:
-            print("Invalid email format.")  # Catch any other invalid formats
-            break
-    except Exception as e:
-        print(f"An error occurred: {e}, please try again.")
+ext = [1200, 500, 4090, 3200, 700]
+rawM = 6100
+bal = [rawM]
 
-print(f"Anda telah berjaya mencipta email {username}.")
+for i in range(len(ext)):
+    n = 0
+    while n < len(bal):
+        last_balance = bal[n]
+
+        if last_balance - ext[i] >= 0:
+            new_balance = last_balance - ext[i]
+            bal[n] = ext[i]  # Update the current entry in bal with ext[i]
+            bal.append(new_balance)  # Add the new balance to bal
+            print(bal)  # Print bal after each update
+            break
+        n += 1
