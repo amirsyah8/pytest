@@ -1,3 +1,4 @@
+"""
 import pandas as pd
 
 # Read data from Excel file
@@ -8,7 +9,8 @@ ext = df[0].tolist()
 
 # Print the extracted data
 print("Extracted data from Excel:", ext)
-
+"""
+ext = [1200, 500, 4090, 3200, 200,110,2900,120]
 cutLi = []
 rawMate = 6100
 
