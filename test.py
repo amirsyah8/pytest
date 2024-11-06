@@ -1,27 +1,15 @@
-"""
-ext = []  # Initialize the outer list to hold other lists
+import pandas as pd
+
+# Read data from Excel file
+df = pd.read_excel('your_file.xlsx', header=None)  # Adjust the path to your Excel file
+
+# Convert the values in the first column to a list
+ext = df[0].tolist()
+
+# Print the extracted data
+print("Extracted data from Excel:", ext)
+
 cutLi = []
-start = 1
-
-# Create 3 sublists, each with 5 consecutive numbers
-for i in range(3):  # Outer loop for creating 3 sublists
-    cutLi.append([])  # Append an empty sublist to ext
-
-    count = 0  # Counter to track the number of elements in each sublist
-    while count < 5:
-        cutLi[i].append(start)  # Add the current number to the sublist at ext[i]
-        start += 1  # Increment start to the next number
-        count += 1  # Increment count to track elements added
-
-# Print the result
-print(len(cutLi))
-for sublist in cutLi:
-    print(sublist)
-
-"""
-ext = [1200, 500, 4090, 3200, 200,110,2900,120]  # Initialize the outer list to hold other lists
-cutLi = []
-start = 1
 rawMate = 6100
 
 
@@ -42,9 +30,6 @@ for i in range(len(ext)):  # nak loop ext
             if count == len(cutLi):
                 cutLi.append([rawMate])
 
-        #cutLi[i].append(start)   Add the current number to the sublist at ext[i]
-        #start += 1  # Increment start to the next number
-          # Increment count to track elements added
 
 # Print the result
 print(len(cutLi))
